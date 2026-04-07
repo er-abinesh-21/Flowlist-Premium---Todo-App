@@ -16,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata = {
   title: {
-    default: "Flowlist | Premium Todo SaaS",
+    default: "Flowlist | Premium Todo App",
     template: "%s",
   },
   description:
