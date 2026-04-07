@@ -1,0 +1,99 @@
+:root {
+  --bg-base: #020617;
+  --bg-overlay: #0f172a;
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-bg: rgba(15, 23, 42, 0.46);
+  --glass-soft: rgba(30, 41, 59, 0.44);
+  --glass-border: rgba(148, 163, 184, 0.28);
+
+  --shadow-sm: 0 8px 18px rgba(2, 6, 23, 0.2);
+  --shadow-md: 0 16px 32px rgba(2, 6, 23, 0.24);
+  --shadow-lg: 0 24px 42px rgba(2, 6, 23, 0.3);
+}
+
+[data-theme="light"] {
+  --bg-base: #f8fafc;
+  --bg-overlay: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-muted: #475569;
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-soft: rgba(255, 255, 255, 0.58);
+  --glass-border: rgba(148, 163, 184, 0.34);
+
+  --shadow-sm: 0 8px 18px rgba(30, 41, 59, 0.12);
+  --shadow-md: 0 14px 28px rgba(30, 41, 59, 0.14);
+  --shadow-lg: 0 22px 40px rgba(30, 41, 59, 0.16);
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(6, 182, 212, 0.2), transparent 36%),
+    radial-gradient(circle at 85% 82%, rgba(45, 212, 191, 0.18), transparent 38%),
+    linear-gradient(145deg, var(--bg-base), var(--bg-overlay));
+  font-family: var(--font-sans), "Manrope", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), "Space Grotesk", "Segoe UI", sans-serif;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

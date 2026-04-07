@@ -1,0 +1,151 @@
+.page {
+  min-height: 100dvh;
+  position: relative;
+  padding: 1.2rem clamp(1rem, 3vw, 2rem) 2rem;
+  overflow: hidden;
+}
+
+.gradientOrbOne,
+.gradientOrbTwo {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(66px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.gradientOrbOne {
+  width: 23rem;
+  height: 23rem;
+  top: -8rem;
+  left: -5rem;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.6), rgba(56, 189, 248, 0));
+}
+
+.gradientOrbTwo {
+  width: 20rem;
+  height: 20rem;
+  right: -4rem;
+  bottom: -6rem;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.54), rgba(45, 212, 191, 0));
+}
+
+.header,
+.grid {
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  border-radius: 1.2rem;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(17px);
+  box-shadow: var(--shadow-md);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  font-size: clamp(1.15rem, 3.8vw, 1.7rem);
+  letter-spacing: -0.01em;
+}
+
+.header p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.newTaskButton,
+.signOutButton,
+.openComposerButton {
+  border-radius: 0.84rem;
+  border: 1px solid transparent;
+  font-size: 0.84rem;
+  font-weight: 620;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+.newTaskButton {
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+  color: #fff;
+  padding: 0.56rem 0.86rem;
+}
+
+.signOutButton,
+.openComposerButton {
+  background: rgba(148, 163, 184, 0.16);
+  border-color: var(--glass-border);
+  color: var(--text-primary);
+  padding: 0.56rem 0.76rem;
+}
+
+.grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(15rem, 1fr);
+  gap: 0.9rem;
+}
+
+.mainColumn,
+.sideColumn {
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
+}
+
+.shortcutCard {
+  border-radius: 1rem;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  box-shadow: var(--shadow-sm);
+  padding: 0.9rem;
+}
+
+.shortcutCard h3 {
+  font-size: 0.88rem;
+  margin-bottom: 0.5rem;
+}
+
+.shortcutCard ul {
+  list-style: none;
+  display: grid;
+  gap: 0.38rem;
+}
+
+.shortcutCard li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.shortcutCard li span {
+  border-radius: 0.45rem;
+  border: 1px solid var(--glass-border);
+  padding: 0.15rem 0.4rem;
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+@media (max-width: 1020px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

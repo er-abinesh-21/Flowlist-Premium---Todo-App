@@ -1,0 +1,499 @@
+.routeLoaderWrap {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.routeLoaderCard {
+  width: min(28rem, 92vw);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.2rem;
+  backdrop-filter: blur(18px);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.skeletonBar,
+.skeletonBarShort,
+.skeletonRow,
+.skeletonRowShort {
+  height: 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(120deg, rgba(148, 163, 184, 0.25), rgba(148, 163, 184, 0.5));
+  animation: shimmer 1.3s linear infinite;
+  background-size: 200% 100%;
+}
+
+.skeletonBar + .skeletonBar,
+.skeletonRow + .skeletonRowShort {
+  margin-top: 0.7rem;
+}
+
+.skeletonBarShort,
+.skeletonRowShort {
+  width: 62%;
+}
+
+.themeToggle,
+.voiceButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-soft);
+  color: var(--text-primary);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.themeToggle:hover,
+.voiceButton:hover {
+  transform: translateY(-1px);
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.composerCard,
+.filterBar,
+.emptyStateCard,
+.aiCard,
+.progressCard,
+.statCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.15rem;
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-md);
+}
+
+.composerCard,
+.filterBar,
+.aiCard,
+.progressCard {
+  padding: 1rem;
+}
+
+.composerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.composerHeader h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field label,
+.field span {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+.textInput,
+.textareaInput,
+.selectInput {
+  width: 100%;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  background: rgba(15, 23, 42, 0.15);
+  color: var(--text-primary);
+  padding: 0.72rem 0.85rem;
+  font-size: 0.92rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme="light"] .textInput,
+[data-theme="light"] .textareaInput,
+[data-theme="light"] .selectInput {
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.textInput:focus,
+.textareaInput:focus,
+.selectInput:focus {
+  outline: none;
+  border-color: rgba(56, 189, 248, 0.72);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.14);
+}
+
+.textareaInput {
+  resize: vertical;
+  min-height: 4.6rem;
+}
+
+.composerGrid,
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0.85rem 0;
+}
+
+.actionRow {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.55rem;
+}
+
+.primaryButton,
+.ghostButton {
+  border-radius: 0.8rem;
+  border: 1px solid transparent;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primaryButton {
+  color: #fff;
+  background: linear-gradient(140deg, #0284c7, #22d3ee);
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(34, 211, 238, 0.22);
+}
+
+.ghostButton {
+  background: rgba(148, 163, 184, 0.14);
+  border-color: var(--glass-border);
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+.ghostButton:hover {
+  background: rgba(148, 163, 184, 0.22);
+}
+
+.todoList {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.todoCard {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.88rem;
+  border-radius: 1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.todoCardDone {
+  opacity: 0.78;
+}
+
+.todoCardDragging {
+  box-shadow: var(--shadow-lg);
+}
+
+.checkboxButton {
+  margin-top: 0.15rem;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.checkboxDone {
+  border-color: rgba(20, 184, 166, 0.62);
+  background: rgba(20, 184, 166, 0.15);
+}
+
+.checkboxCore {
+  width: 0.64rem;
+  height: 0.64rem;
+  border-radius: 50%;
+  background: rgba(148, 163, 184, 0.8);
+}
+
+.checkboxDone .checkboxCore {
+  background: #2dd4bf;
+}
+
+.todoContent {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.todoTopLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.todoTitle,
+.todoTitleDone {
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.todoTitleDone {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.priorityBadge {
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  border: 1px solid transparent;
+}
+
+.priority_low {
+  color: #22d3ee;
+  background: rgba(34, 211, 238, 0.14);
+  border-color: rgba(34, 211, 238, 0.3);
+}
+
+.priority_medium {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.28);
+}
+
+.priority_high {
+  color: #f97316;
+  background: rgba(249, 115, 22, 0.14);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.todoDescription {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+.todoMetaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.dueMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.dueOverdue {
+  color: #fb7185;
+}
+
+.tagRow {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.tagChip {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 0.18rem 0.5rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: rgba(148, 163, 184, 0.1);
+}
+
+.todoActions {
+  display: flex;
+  align-items: center;
+  gap: 0.36rem;
+}
+
+.iconButton,
+.iconButtonDanger,
+.dragHandle {
+  border: 1px solid var(--glass-border);
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--text-primary);
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 0.6rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.iconButtonDanger {
+  color: #fb7185;
+}
+
+.dragHandle {
+  cursor: grab;
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.emptyStateCard {
+  margin-top: 1rem;
+  padding: 1.4rem;
+  text-align: center;
+}
+
+.emptyStateCard h4 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.emptyStateCard p {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.statsWrap {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.statCard {
+  padding: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statCard span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.statCard strong {
+  font-size: 1rem;
+}
+
+.progressCard header {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.progressCard p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin: 0.45rem 0;
+}
+
+.progressTrack {
+  height: 0.5rem;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.2);
+  overflow: hidden;
+}
+
+.progressTrack span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(130deg, #0ea5e9, #2dd4bf);
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.aiCard {
+  margin-top: 0.8rem;
+}
+
+.aiHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.aiHeader h3 {
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.aiHeader p {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  margin-top: 0.25rem;
+}
+
+.aiList {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.45rem;
+  list-style: none;
+}
+
+.aiList li {
+  background: rgba(148, 163, 184, 0.13);
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  border-radius: 0.76rem;
+  padding: 0.62rem;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.skeletonList {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.skeletonCard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+  padding: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .composerGrid,
+  .filterGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .todoCard {
+    grid-template-columns: auto 1fr;
+  }
+
+  .todoActions {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
+}

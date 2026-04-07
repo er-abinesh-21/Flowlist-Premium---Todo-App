@@ -1,0 +1,173 @@
+.page {
+  min-height: 100dvh;
+  position: relative;
+  padding: 1.2rem clamp(1rem, 3vw, 2rem) 2.5rem;
+  overflow: hidden;
+}
+
+.gradientOrbOne,
+.gradientOrbTwo {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(60px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.gradientOrbOne {
+  width: 24rem;
+  height: 24rem;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.6), rgba(14, 165, 233, 0));
+  top: -7rem;
+  left: -6rem;
+}
+
+.gradientOrbTwo {
+  width: 22rem;
+  height: 22rem;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.5), rgba(52, 211, 153, 0));
+  bottom: -6rem;
+  right: -5rem;
+}
+
+.navbar,
+.main {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.navLink {
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-soft);
+  padding: 0.5rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.main {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.hero {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  border-radius: 1.3rem;
+  padding: clamp(1.4rem, 3vw, 2.6rem);
+  box-shadow: var(--shadow-lg);
+}
+
+.badge {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 211, 238, 0.32);
+  background: rgba(34, 211, 238, 0.14);
+  color: #22d3ee;
+  padding: 0.28rem 0.72rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 5.8vw, 3.3rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  margin-top: 0.8rem;
+  max-width: 40rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.heroActions {
+  margin-top: 1.3rem;
+  display: flex;
+  gap: 0.68rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+  border-radius: 0.9rem;
+  border: 1px solid transparent;
+  padding: 0.65rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 650;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryButton {
+  background: linear-gradient(130deg, #0284c7, #22d3ee);
+  color: #fff;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.secondaryButton {
+  border-color: var(--glass-border);
+  background: rgba(148, 163, 184, 0.15);
+}
+
+.featureGrid {
+  margin-top: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.featureCard {
+  border-radius: 1rem;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.featureCard h3 {
+  margin-top: 0.55rem;
+  font-size: 0.95rem;
+}
+
+.featureCard p {
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+@media (max-width: 900px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+}

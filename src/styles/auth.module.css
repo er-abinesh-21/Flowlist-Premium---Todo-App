@@ -1,0 +1,167 @@
+.page {
+  min-height: 100dvh;
+  position: relative;
+  padding: 1.2rem;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  overflow: hidden;
+}
+
+.gradientOrbOne,
+.gradientOrbTwo {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(60px);
+  opacity: 0.48;
+  z-index: 0;
+}
+
+.gradientOrbOne {
+  width: 22rem;
+  height: 22rem;
+  top: -7rem;
+  left: -6rem;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.62), rgba(56, 189, 248, 0));
+}
+
+.gradientOrbTwo {
+  width: 18rem;
+  height: 18rem;
+  right: -4rem;
+  bottom: -4rem;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.5), rgba(16, 185, 129, 0));
+}
+
+.navbar,
+.card {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  width: min(29rem, 95vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  padding: 0.43rem 0.7rem;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-soft);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.card {
+  width: min(29rem, 95vw);
+  border-radius: 1.3rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(1.1rem, 3vw, 1.5rem);
+}
+
+.card h1 {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+}
+
+.card p {
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field span {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.field input {
+  border-radius: 0.86rem;
+  border: 1px solid rgba(148, 163, 184, 0.36);
+  background: rgba(15, 23, 42, 0.12);
+  color: var(--text-primary);
+  padding: 0.68rem 0.8rem;
+}
+
+[data-theme="light"] .field input {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.field input:focus {
+  outline: none;
+  border-color: rgba(56, 189, 248, 0.72);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.14);
+}
+
+.errorText {
+  border-radius: 0.72rem;
+  background: rgba(251, 113, 133, 0.16);
+  border: 1px solid rgba(251, 113, 133, 0.32);
+  padding: 0.56rem;
+  color: #fb7185;
+  font-size: 0.8rem;
+}
+
+.primaryButton,
+.googleButton {
+  border: 1px solid transparent;
+  border-radius: 0.86rem;
+  padding: 0.68rem 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 650;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+  color: #fff;
+}
+
+.googleButton {
+  width: 100%;
+  margin-top: 0.7rem;
+  background: rgba(148, 163, 184, 0.14);
+  border-color: var(--glass-border);
+  color: var(--text-primary);
+}
+
+.switchText {
+  margin-top: 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.switchText a {
+  color: #22d3ee;
+  font-weight: 600;
+}
+
+.spinner {
+  animation: spin 0.9s linear infinite;
+}
